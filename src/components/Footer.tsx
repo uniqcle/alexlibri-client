@@ -1,12 +1,12 @@
-// import {
-//     LuHouse,
-//     LuSearch,
-//     LuHeadphones,
-//     LuBookmark,
-//     LuBookOpen,
-//     LuLandmark,
-// } from "react-icons/lu";
-// import { GrCatalog } from "react-icons/gr";
+import {
+    LuHouse,
+    LuSearch,
+    LuHeadphones,
+    LuBookmark,
+    LuBookOpen,
+    LuLandmark,
+} from "react-icons/lu";
+import { GrCatalog } from "react-icons/gr";
 
 export function Footer() {
     return (
@@ -14,24 +14,24 @@ export function Footer() {
             <div className="footer-container">
                 <div>
                     <div className="is-active">
-                        {/* <LuLandmark /> */}
+                        <LuLandmark />
                         <span>Главная</span>
                     </div>
                 </div>
                 <div>
-                    {/* <GrCatalog /> */}
+                    <GrCatalog />
                     <span>Каталог</span>
                 </div>
                 <div>
-                    {/* <LuSearch /> */}
+                    <LuSearch />
                     <span>Авторы</span>
                 </div>
                 <div>
-                    {/* <LuHeadphones /> */}
+                    <LuHeadphones />
                     <span>Аудиокниги</span>
                 </div>
                 <div>
-                    {/* <LuBookmark /> */}
+                    <LuBookmark />
                     <span>Мои свитки</span>
                 </div>
                 {/* <div>

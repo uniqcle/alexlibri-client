@@ -22,15 +22,15 @@ export function PaginationList() {
                         </PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
+                        <PaginationLink href="#">I</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationLink href="#" isActive>
-                            2
+                            II
                         </PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
+                        <PaginationLink href="#">III</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationEllipsis />
