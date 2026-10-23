@@ -1,0 +1,39 @@
+/* =========================================== */
+/* ---------- Desktop Menu ---------- */
+/* =========================================== */
+
+
+/* [data-slot="navigation-menu-viewport"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+} */
+
+
+/* =========================================== */
+/* ---------- Desktop Menu ---------- */
+/* =========================================== */
+
+/* Базовое скругление для всех пунктов */
+/* .menu button,
+.menu a,
+[data-slot="navigation-menu-trigger"],
+[data-slot="navigation-menu-link"] {
+    border-radius: 999px !important;
+} */
+
+/* Ховер + активный */
+  .menu button:hover,
+.menu button[data-state="open"],
+.menu button[aria-expanded="true"],
+.menu a:hover,
+.menu a[aria-current="page"],
+[data-slot="navigation-menu-content"] a:hover,
+[data-slot="navigation-menu-link"]:hover,
+[data-slot="navigation-menu-link"][aria-current="page"] {
+    background-color: #f9d13b !important;
+    color: rgb(0 0 0 / 0.95) !important;
+   
+}  

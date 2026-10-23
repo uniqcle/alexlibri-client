@@ -1,0 +1,151 @@
+/* =========================================== */
+/* ---------- КОНТЕЙНЕР ---------- */
+/* =========================================== */
+
+.catalogListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 4px 0;
+}
+
+/* =========================================== */
+/* ---------- КАРТОЧКА ---------- */
+/* =========================================== */
+
+.card {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 12px;
+
+    background-color: transparent;
+    border: 1px solid rgb(0 0 0 / 0.06);
+    border-radius: 16px;
+
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgb(249 209 59);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.08);
+}
+
+/* =========================================== */
+/* ---------- ФОТО ---------- */
+/* =========================================== */
+
+.image {
+    position: relative;        /* 👈 обязательно */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================== */
+/* ---------- ТЕКСТ ---------- */
+/* =========================================== */
+
+.title {
+    
+    font-weight: 500;
+    line-height: 1.3;
+    color: rgb(0 0 0 / 0.85);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.author,
+.translator {
+    font-size: 12px;
+    line-height: 1.3;
+    color: rgb(0 0 0 / 0.5);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.author span,
+.translator span {
+    color: rgb(0 0 0 / 0.75);
+    font-style: italic;
+}
+
+.author span {
+    font-weight: bold;
+}
+
+/* =========================================== */
+/* ---------- МЕДИА ---------- */
+/* =========================================== */
+
+@media (max-width: 768px) {
+    .catalogListContainer {
+        gap: 14px;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 7px);
+        max-width: calc(50% - 7px);
+        padding: 10px;
+        gap: 4px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .author,
+    .translator {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogListContainer {
+        gap: 12px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        max-width: 320px;      /* 👈 ограничение ширины */
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    .image {
+        border-radius: 8px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .author,
+    .translator {
+        font-size: 10px;
+    }
+}

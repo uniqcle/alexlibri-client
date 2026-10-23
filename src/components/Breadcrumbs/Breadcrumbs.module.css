@@ -1,0 +1,79 @@
+/* =========================================== */
+/* ---------- КОНТЕЙНЕР ---------- */
+/* =========================================== */
+
+.breadcrumbs {
+    color: rgb(0 0 0 / 0.55);
+    line-height: 1.4;
+    margin-top: 15px;
+}
+
+/* =========================================== */
+/* ---------- СПИСОК ---------- */
+/* =========================================== */
+
+.breadcrumbList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 13px;
+    color: inherit;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================== */
+/* ---------- ССЫЛКИ ---------- */
+/* =========================================== */
+
+.breadcrumbLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+    color: rgb(0 0 0 / 0.85);
+}
+
+/* =========================================== */
+/* ---------- ТЕКУЩАЯ СТРАНИЦА ---------- */
+/* =========================================== */
+
+.breadcrumbPage {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: inherit;
+    color: rgb(0 0 0 / 0.75);
+}
+
+/* =========================================== */
+/* ---------- РАЗДЕЛИТЕЛЬ ---------- */
+/* =========================================== */
+
+.breadcrumbSeparator {
+    color: rgb(0 0 0 / 0.35);
+}
+
+/* =========================================== */
+/* ---------- ИКОНКИ ---------- */
+/* =========================================== */
+
+.breadcrumbs svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}

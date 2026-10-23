@@ -1,0 +1,114 @@
+/* Обёртка картинки */
+.image {
+    margin-bottom: 10px; /* отступ от картинки до текста */
+    border-radius: 10px;
+    overflow: hidden; /* скругление работает и для img */
+}
+
+/* Сама картинка */
+.image img {
+    display: block; /* убирает зазор под картинкой */
+    width: 100%; /* растягивается по ширине родителя */
+    height: auto; /* сохраняет пропорции */
+    object-fit: cover; /* если зададите height — не искажается */
+}
+
+/* ---------- ОБЩИЙ БЛОК ---------- */
+
+.panel {
+    display: flex;
+    justify-content: space-between; /* автор слева, функции справа */
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(0 0 0 / 0.06);
+}
+
+/* ---------- АВТОР (слева) ---------- */
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0; /* разрешает сжатие */
+}
+
+/* Круглое фото */
+.author img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* не сжимается */
+    border: 1px solid rgb(0 0 0 / 0.08);
+}
+
+/* Текст автора — как breadcrumbs */
+.author > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.author > div > div:first-child {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(0 0 0 / 0.75);
+    line-height: 1.2;
+}
+
+.author > div > div:last-child {
+    font-size: 12px;
+    color: rgb(0 0 0 / 0.45);
+    line-height: 1.2;
+}
+
+/* ---------- ФУНКЦИИ (справа) ---------- */
+
+.functions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0; /* не сжимается */
+}
+
+.functions > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    color: rgb(0 0 0 / 0.55);
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.functions > div:hover {
+    background-color: rgb(249 209 59 / 0.25);
+    color: rgb(0 0 0 / 0.85);
+    transform: scale(1.08);
+}
+
+.functions > div:active {
+    transform: scale(0.95);
+}
+
+.functions svg {
+    width: 18px;
+    height: 18px;
+}
+
+ 
+/* =========================================== */
+/* ---------- Медиа запросы ---------- */
+/* =========================================== */
+

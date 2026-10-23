@@ -1,0 +1,32 @@
+ .typeset-text {
+  --typeset-font-body: var(--font-shantell-sans);
+  --typeset-font-heading: var(--font-shantell-sans);
+  --typeset-font-mono: var(--font-shantell-sans);
+  --typeset-size: 14px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.25em;
+  	color: #000000b3;
+}
+
+.typeset-text h1 {
+    font-size: 24px;       /* 👈 крупнее */
+    font-weight: 700;      /* 👈 жирнее */
+    line-height: 1.2;
+	padding: 20px; 
+}
+
+.typeset-text p {
+    margin-top: 20px; 
+	margin-bottom: 20px; 
+}
+
+
+
+.typeset-handwriting {
+  --typeset-font-body: var(--font-caveat);
+  --typeset-font-heading: var(--font-caveat);
+  --typeset-font-mono: var(--font-caveat);
+  --typeset-size: 14px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.25em;
+}

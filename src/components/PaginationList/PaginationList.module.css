@@ -1,0 +1,171 @@
+/* =========================================== */
+/* ---------- КОНТЕЙНЕР ---------- */
+/* =========================================== */
+
+.paginationWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* ---------- СПИСОК ---------- */
+/* =========================================== */
+
+.paginationWrapper [data-slot="pagination-content"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
+/* =========================================== */
+/* ---------- ПУНКТЫ (цифры) ---------- */
+/* =========================================== */
+
+.paginationWrapper [data-slot="pagination-link"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 0;
+
+    color: rgb(0 0 0 / 0.7);
+    background-color: transparent;
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* 👇 иконки внутри — block, центрируются */
+.paginationWrapper [data-slot="pagination-link"] svg {
+        display: block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;              /* 👈 не сжимается */
+	 
+}
+
+
+.paginationWrapper [data-slot="pagination-link"]:hover {
+    background-color: rgb(249 209 59 / 0.25);
+    color: rgb(0 0 0 / 0.9);
+}
+
+/* Активная страница */
+.paginationWrapper [data-slot="pagination-link"][aria-current="page"],
+.paginationWrapper [data-slot="pagination-link"][data-active="true"] {
+    background-color: rgb(249 209 59);
+    color: rgb(0 0 0 / 0.9);
+}
+
+/* =========================================== */
+/* ---------- PREV / NEXT ---------- */
+/* =========================================== */
+
+.paginationWrapper [data-slot="pagination-previous"],
+.paginationWrapper [data-slot="pagination-next"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 36px;
+    padding: 0 14px;
+    gap: 6px;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+
+    color: rgb(0 0 0 / 0.7);
+    background-color: transparent;
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.paginationWrapper [data-slot="pagination-previous"]:hover,
+.paginationWrapper [data-slot="pagination-next"]:hover {
+    background-color: rgb(249 209 59 / 0.25);
+    color: rgb(0 0 0 / 0.9);
+}
+
+/* Иконка внутри Prev/Next */
+.paginationWrapper [data-slot="pagination-previous"] svg,
+.paginationWrapper [data-slot="pagination-next"] svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* =========================================== */
+/* ---------- ELLIPSIS (…) ---------- */
+/* =========================================== */
+
+.paginationWrapper [data-slot="pagination-ellipsis"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    color: rgb(0 0 0 / 0.4);
+    font-size: 14px;
+}
+
+/* =========================================== */
+/* ---------- МЕДИА ---------- */
+/* =========================================== */
+
+@media (max-width: 640px) {
+    .paginationWrapper [data-slot="pagination-link"] {
+		 
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .paginationWrapper [data-slot="pagination-previous"],
+    .paginationWrapper [data-slot="pagination-next"] {
+        height: 32px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .paginationWrapper [data-slot="pagination-ellipsis"] {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paginationWrapper [data-slot="pagination-previous"] span,
+    .paginationWrapper [data-slot="pagination-next"] span {
+        display: none;              /* 👈 скрываем текст «Previous» / «Next» */
+    }
+
+    .paginationWrapper [data-slot="pagination-previous"],
+    .paginationWrapper [data-slot="pagination-next"] {
+        width: 32px;
+        padding: 0;
+    }
+}

@@ -1,16 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Source_Sans_3, Caveat, Shantell_Sans } from "next/font/google";
+import { AppShell } from "@components/AppShell";
+import localFont from "next/font/local";
+import "@styles/index.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const caesarDressing = localFont({
+    src: "../assets/fonts/caesar-dressing-cyrillic-regular.otf",
+    variable: "--font-caesar",
+    display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Определение шрифта Caveat
+const caveat = Caveat({
+    subsets: ["cyrillic", "latin"], // Ключевой момент: явное указание кириллицы и латиницы
+    weight: ["400", "700"], // Соответствует вашим требованиям к весам 400 и 700
+    variable: "--font-caveat", // Определение CSS-переменной для удобного использования
+    display: "swap",
 });
+
+const sourceSans3 = Source_Sans_3({
+    subsets: ["latin", "cyrillic"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--font-source-sans",
+    display: "swap",
+});
+
+const shantellSans = Shantell_Sans({
+    subsets: ["latin", "cyrillic"], // 👈 обязательно для русского
+    variable: "--font-shantell-sans",
+    display: "swap",
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,11 +39,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+      <html
+          lang="en"
+          className={`${shantellSans.variable}   ${caesarDressing.variable} ${caveat.variable} ${sourceSans3.variable}`}
+      >
+          <body>
+              <AppShell>{children}</AppShell>
+          </body>
+      </html>
   );
 }

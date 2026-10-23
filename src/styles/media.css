@@ -1,0 +1,133 @@
+/* ========== media.css ========== */
+
+@media (max-width: 1760px) {
+    .menu {
+        display: none;
+    }
+
+    .mobile_menu {
+        display: block;
+    }
+}
+
+/* =========================================== */
+/* 1. Планшеты и маленькие ноутбуки (до 1024px) */
+/* =========================================== */
+@media (max-width: 1024px) {
+    .app-container {
+        grid-template-columns: 200px 1fr 200px;
+        padding-bottom: 10px;
+    }
+
+    .header {
+        --header-padding-x: 40px;
+    }
+
+    .main-pagination {
+        max-width: 400px;
+    }
+
+    .logo {
+        --logo-scale: 0.8;
+    }
+}
+
+/* =========================================== */
+/* 2. Планшеты (до 820px) — сайдбары не влезают */
+/* =========================================== */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        display: none;
+    }
+
+    .main-container {
+        margin-bottom: var(--pagination-height);
+    }
+
+    .header {
+        --header-padding-x: 10px;
+        --header-height: 70px;
+        --header-height-scrolled: 50px; /* на планшете не сжимается */
+        grid-template-columns: auto 1fr;
+    }
+
+    .logo {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .app-container.is-scrolled .logo {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================== */
+/* 3. Телефоны (до 670px) */
+/* =========================================== */
+@media (max-width: 640px) {
+    .main-pagination {
+        font-size: 16px;
+    }
+
+    .header {
+        --header-height: 50px;
+    }
+
+    .main-container {
+        padding: 10px 50px 70px 50px;
+        padding-bottom: 70px;
+    }
+
+    .main-logo {
+        font-size: 27px;
+    }
+}
+
+/* =========================================== */
+/* 4. Маленькие телефоны (до 400px) */
+/* =========================================== */
+@media (max-width: 400px) {
+    .app-container {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .main-pagination {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .app-container.is-scrolled .logo {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sub-logo {
+        margin-right: 0%;
+    }
+
+    .app-container.is-scrolled .logo img {
+        display: none;
+    }
+}

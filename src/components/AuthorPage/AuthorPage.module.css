@@ -1,0 +1,224 @@
+/* =========================================== */
+/* ---------- КОНТЕЙНЕР ---------- */
+/* =========================================== */
+
+.author_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* =========================================== */
+/* ---------- КРАТКАЯ ИНФОРМАЦИЯ ---------- */
+/* =========================================== */
+
+.author_short {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.author_image {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 1px solid rgb(0 0 0 / 0.08);
+    background: white;
+
+    transition:
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.author_image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author_image:hover {
+    border-color: rgb(249 209 59);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
+}
+
+.author_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.author_fullName {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: rgb(0 0 0 / 0.85);
+}
+
+.author_birthDate {
+    font-size: 13px;
+    color: rgb(0 0 0 / 0.45);
+    line-height: 1.2;
+}
+
+.author_desc_text {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgb(0 0 0 / 0.7);
+    font-style: italic;
+}
+
+/* =========================================== */
+/* ---------- ДЛИННАЯ ЧАСТЬ ---------- */
+/* =========================================== */
+
+.author_long {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================================== */
+/* ---------- TABS ---------- */
+/* =========================================== */
+  
+ 
+.author_tabTrigger[aria-selected="true"] {
+    background-color: rgb(249 209 59);
+    color: rgb(0 0 0 / 0.9);
+}
+
+.author_tabTrigger[data-state="active"]::after {
+    display: none;
+}
+
+/* =========================================== */
+/* ---------- CARD ---------- */
+/* =========================================== */
+
+.author_card {
+    background-color: transparent;
+    border: none;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.author_cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.author_cardTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0 0 0 / 0.85);
+    line-height: 1.3;
+}
+
+.author_cardDescription {
+    font-size: 13px;
+    color: rgb(0 0 0 / 0.5);
+    line-height: 1.4;
+}
+
+.author_cardContent {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgb(0 0 0 / 0.7);
+}
+
+/* =========================================== */
+/* ---------- МЕДИА ---------- */
+/* =========================================== */
+
+@media (max-width: 640px) {
+    .author_short {
+        gap: 16px;
+    }
+
+    .author_image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .author_fullName {
+        font-size: 22px;
+    }
+
+    .author_desc_text {
+        font-size: 14px;
+    }
+
+    .author_tabTrigger {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .author_card {
+        padding: 16px;
+    }
+
+    .author_cardTitle {
+        font-size: 16px;
+    }
+
+    .author_cardContent {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .author_short {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .author_image {
+        width: 88px;
+        height: 88px;
+    }
+
+    .author_fullName {
+        font-size: 20px;
+    }
+
+    .author_desc {
+        align-items: center;
+    }
+
+    .author_birthDate {
+        font-size: 12px;
+    }
+
+    .author_desc_text {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .author_tabTrigger {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .author_card {
+        padding: 14px;
+    }
+
+    .author_cardTitle {
+        font-size: 15px;
+    }
+
+    .author_cardContent {
+        font-size: 13px;
+    }
+}

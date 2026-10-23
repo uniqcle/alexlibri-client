@@ -1,0 +1,28 @@
+/* 1. Переменные — первыми */
+@import "./vars.css";
+
+/* 2. Tailwind */
+@import "./globals.css";
+
+/* 3. Типографика shadcn */
+@import "./typeset.css";
+
+/* 4. Шрифты */
+@import "./fonts.css";
+
+/* 5. Основные стили */
+@import "./styles.css";
+
+/* 6. Медиа-запросы */
+@import "./media.css";
+
+/* 7. Фиксы — последними */
+@import "./fixed.css";
+
+
+ 
+
+
+
+
+

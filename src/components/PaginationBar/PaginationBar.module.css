@@ -1,0 +1,84 @@
+
+
+/* =========================================== */
+/* ---------- 9. ПАГИНАЦИЯ ---------- */
+/* =========================================== */
+
+.main_pagination {
+    width: 100%;
+    max-width: 370px;
+    margin-bottom: 10px;
+    background-color: rgb(0 0 0 / 0.7);
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+
+    border-radius: 30px;
+
+    position: fixed;
+    bottom: var(--pagination-height);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+}
+
+.main_pagination > div {
+    min-width: 0;
+    flex: 0 1 auto; /* дети могут сжиматься и растягиваться */
+}
+
+/* Все ссылки пагинации */
+.main_pagination [data-slot="pagination-link"] {
+    background-color: white;
+    color: rgb(0 0 0 / 0.8);
+    border-radius: 8px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* При наведении */
+.main_pagination [data-slot="pagination-link"]:hover {
+    background-color: rgb(230 190 40);
+}
+
+/* Активная страница (isActive) */
+.main_pagination [data-slot="pagination-link"][aria-current="page"] {
+    background-color: rgb(249 209 59);
+    color: black;
+}
+
+/* Previous / Next */
+.main_pagination [data-slot="pagination-previous"],
+.main_pagination [data-slot="pagination-next"] {
+    background-color: transparent;
+    color: rgb(0 0 0 / 0.8);
+}
+
+.pagination_index_btn {
+    color: rgb(0 0 0 / 0.8);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+}
+
+.pagination_index_btn:hover {
+    background-color: rgb(230 190 40);
+    cursor: pointer;
+}
+
