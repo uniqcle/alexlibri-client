@@ -26,10 +26,10 @@ export function Footer() {
                     <LuSearch />
                     <span>Авторы</span>
                 </div>
-                <div>
+                {/* <div>
                     <LuHeadphones />
                     <span>Аудиокниги</span>
-                </div>
+                </div> */}
                 <div>
                     <LuBookmark />
                     <span>Мои свитки</span>
