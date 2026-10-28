@@ -33,8 +33,10 @@ CREATE TABLE "Author" (
 -- CreateTable
 CREATE TABLE "Book" (
     "id" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
     "title" TEXT NOT NULL,
-    "authorId" TEXT,
+    "imageUrl" TEXT,
+    "authorId" TEXT NOT NULL,
 
     CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
 );
@@ -48,5 +50,8 @@ CREATE UNIQUE INDEX "Author_slug_key" ON "Author"("slug");
 -- CreateIndex
 CREATE INDEX "Author_name_idx" ON "Author"("name");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "Book_slug_key" ON "Book"("slug");
+
 -- AddForeignKey
-ALTER TABLE "Book" ADD CONSTRAINT "Book_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Author"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Book" ADD CONSTRAINT "Book_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Author"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
