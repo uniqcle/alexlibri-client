@@ -256,7 +256,8 @@
     align-items: center;
 
     gap: 4px;
-    font-size: 12px;
+    font-size: 14px;
+     font-weight: 600;
     cursor: pointer;
     transition: color 0.2s ease;
 }

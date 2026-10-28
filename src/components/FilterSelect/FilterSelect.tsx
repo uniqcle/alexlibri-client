@@ -44,11 +44,13 @@ export function FilterSelect({
             <div className={styles.filterLabel}>{label}</div>
 
             <Select
-                key={isControlled ? value : "uncontrolled"} // 👈 пересоздать при смене value
+                key={isControlled ? value : "uncontrolled"}
                 items={options}
                 value={isControlled ? value : undefined}
                 defaultValue={isControlled ? undefined : defaultValue}
-                onValueChange={onChange}
+                onValueChange={(val) => {
+                    if (val !== null) onChange?.(val);
+                }}
             >
                 <SelectTrigger>
                     <SelectValue placeholder={placeholder} />

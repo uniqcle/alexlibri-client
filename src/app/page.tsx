@@ -1,24 +1,17 @@
-"use client";
-import { AuthorsList } from "@components/AuthorsList/AuthorsList";
+import { MainSlider } from "@components/MainSlider/MainSlider";
 
-export default function App() {
+export default function HomePage() {
     return (
         <main className="main">
-            <div className="main-container ">
-                <div className=" ">
-                    <div className="typeset typeset-text">
-                        <h1>Заголовк статьи или параграфа</h1>
-                        Можно ждать чего угодно1 Можно ждать чего угодно, можно
-                        веровать всему, Ничему нельзя дивиться, раз уж Зевс,
-                        отец богов, В полдень ночь послал на землю, заградивши
-                        свет лучей У сияющего солнца. Жалкий страх на всех
-                        напал. Все должны отныне люди вероятным признавать И
-                        возможным. Удивляться нам не нужно и тогда, Если даже
-                        зверь с дельфином поменяются жильем И милее суши станет
-                        моря звучная волна Зверю, жившему доселе на верхах
-                        скалистых гор.
-                    </div>
-                </div>
+            <div className="main-container">
+                <MainSlider title="Диалоги Платона" />
+                <MainSlider title="Древнегреческая лирика" />
+                <MainSlider title="Древнегреческие трагедии" />
+                <MainSlider title="Древнеримская комедия" />
+                <MainSlider title="Эпиграммы" />
+                <MainSlider title="Философия стоицизма" />
+                <MainSlider title="Оды Горация" />
+                <MainSlider title="Античная история" />
             </div>
         </main>
     );

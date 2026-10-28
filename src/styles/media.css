@@ -107,6 +107,10 @@
         display: none;
     }
 
+    .sub-logo span{
+        left: 30px; 
+    }
+
     .main-pagination {
         font-size: 16px;
     }

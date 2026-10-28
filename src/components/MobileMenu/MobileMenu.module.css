@@ -1,6 +1,97 @@
+/* =========================================== */
+/* ---------- МЕНЮ ---------- */
+/* =========================================== */
+
 .menu {
-    font-family: var(--font-shantell-sans), system-ui, sans-serif;   /* 👈 Source Sans 3 */
+    font-family: var(--font-shantill-sans), system-ui, sans-serif;
+   
+}
+
+/* =========================================== */
+/* ---------- БУРГЕР ---------- */
+/* =========================================== */
+
+.burger {
+    position: absolute;
+    right: 0; /* или left: 0, в зависимости от того, где он должен быть */
+    top: 50%;
+    transform: translateY(-50%);
+
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+
+    color: rgb(0 0 0 / 0.8);
+    cursor: pointer;
+
+    /* margin-left: 5px; */
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+ 
+
+.burger svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+    display: block;
+    transition: none;
+}
+
+.burger:hover {
+    background-color: rgb(0 0 0 / 0.05);
+    color: rgb(0 0 0 / 0.95);
 }
 
 
- 
+/* =========================================== */
+/* ---------- КРЕСТИК ВНУТРИ SHEET ---------- */
+/* =========================================== */
+
+.closeButton {
+    position: static;          /* 👈 не absolute — остаётся в потоке */
+    transform: translateY(-10%) translateX(30%);           /* 👈 сбрасываем translateY */
+    right: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+
+    color: rgb(0 0 0 / 0.8);
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.closeButton svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+    display: block;
+}
+
+.closeButton:hover {
+    background-color: rgb(0 0 0 / 0.05);
+    color: rgb(0 0 0 / 0.95);
+}
+
+

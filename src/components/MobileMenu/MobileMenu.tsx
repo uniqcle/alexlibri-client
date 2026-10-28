@@ -7,6 +7,7 @@ import { LuAlignJustify, LuChevronDown, LuX } from "react-icons/lu";
 import {
     Sheet,
     SheetContent,
+    SheetClose,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
@@ -35,10 +36,10 @@ function MobileMenuInner() {
                 <SheetTrigger
                     render={
                         <button
-                            aria-label={open ? "Закрыть меню" : "Открыть меню"}
-                            className="flex items-center justify-center w-[34px] h-[34px] rounded-md bg-transparent hover:bg-muted transition-colors"
+                            aria-label="Открыть меню"
+                            className={`${styles.burger} ${styles.burgerHeader}`}
                         >
-                            {open ? <LuX /> : <LuAlignJustify />}
+                            <LuAlignJustify />
                         </button>
                     }
                 />
@@ -46,14 +47,26 @@ function MobileMenuInner() {
                 <SheetContent
                     side="right"
                     className="w-[300px] p-0"
+                    showCloseButton={false}
                     style={{
                         zIndex: 9999,
                         boxShadow:
                             "-2px 0 8px rgb(0 0 0 / 0.15), -8px 0 24px rgb(0 0 0 / 0.15)",
                     }}
                 >
-                    <SheetHeader className="p-4 border-b">
+                    <SheetHeader className="p-4 border-b flex flex-row items-center justify-between">
                         <SheetTitle>Александрийская библиотека</SheetTitle>
+
+                        <SheetClose
+                            render={
+                                <button
+                                    aria-label="Закрыть меню"
+                                    className={styles.closeButton}
+                                >
+                                    <LuX />
+                                </button>
+                            }
+                        />
                     </SheetHeader>
 
                     <nav className="flex flex-col p-2 gap-0.5">

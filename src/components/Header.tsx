@@ -24,14 +24,16 @@ export function Header() {
                         src={logo}
                         className="logo-image"
                         alt="Логотип"
-                        width={80}  
+                        width={80}
                         height={80}
                         priority // 👈 логотип грузится сразу, без lazy-load
                     />
                 </Link>
 
                 <div>
-                    <div className="main-logo">Свитки из Александрии</div>
+                    <Link href="/" className="main-logo-link">
+                        <div className="main-logo">Свитки из Александрии</div>
+                    </Link>
                     <div className="sub-logo text-2xl">
                         <span>Античная философия</span>
                     </div>
@@ -42,7 +44,9 @@ export function Header() {
                 <DesktopMenu />
             </div>
 
-            <div className="mobile_menu"><MobileMenu /></div>
+            <div className="mobile_menu">
+                <MobileMenu />
+            </div>
         </header>
     );
 }
