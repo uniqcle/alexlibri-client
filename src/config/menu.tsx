@@ -63,7 +63,7 @@ export const menuItems: MenuItem[] = [
         label: (
             <span className="flex items-center gap-2">
                 <FaQuestion />
-             FAQ
+                FAQ
             </span>
         ),
         children: [
@@ -81,7 +81,7 @@ export const menuItems: MenuItem[] = [
         ),
         children: [
             { label: "Войти", href: "/login" },
-            { label: "Регистрация", href: "/register" },
+            { label: "Регистрация", href: "/signup" },
         ],
     },
 ];
