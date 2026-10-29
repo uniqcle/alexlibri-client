@@ -1,6 +1,5 @@
 // prisma/seed.ts
 import "dotenv/config";
-import "dotenv/config";
 import { Pool } from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient, AuthorOrigin } from "../src/generated/prisma/client";
