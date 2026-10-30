@@ -12,7 +12,6 @@
     box-sizing: border-box;
 }
 
-/* Заголовок + «Все» в одну строку */
 .titleBlock {
     display: flex;
     align-items: baseline;
@@ -21,9 +20,7 @@
 }
 
 .sectionTitle {
-    /* font-family: var(--font-main-logo); */
     font-family: var(--font-caesar), cursive;
-
     font-size: 18px;
     font-weight: 500;
     line-height: 1.2;
@@ -31,7 +28,6 @@
     margin: 0;
 }
 
-/* Ссылка «Все» — приглушённая, с hover */
 .sectionLink {
     font-size: 13px;
     font-weight: 500;
@@ -54,61 +50,96 @@
     max-width: 100%;
 }
 
-/* Слайд — обёртка-ссылка */
-.cardLink {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
-
-    padding-top: 4px; /* 👈 запас сверху, чтобы всплытие не обрезалось */
+/* 👇 разрешаем вертикальный запас внутри Embla-контейнера */
+.carouselContent {
+    /* снимаем обрезку по вертикали, оставляя горизонтальную прокрутку */
+    overflow: visible !important;
+    /* небольшой вертикальный запас, чтобы тень/всплытие не обрезались */
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
-/* Скругление изображения + рамка/тень как в каталоге */
-.cardImage {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
+/* 👇 убираем overflow у слайда, если он есть */
+.carouselItem {
+    overflow: visible !important;
+}
 
-    border: 1px solid rgb(0 0 0 / 0.06); /* 👈 бледная рамка, чтобы не было сдвига */
+/* ---------- СЛАЙД ---------- */
+
+.cardLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    /* 👇 запас внутри слайда: карточка сможет «всплыть» на 2px + тень 6px */
+    padding: 8px 0 10px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+
+    background-color: transparent;
+    border: 1px solid rgb(0 0 0 / 0.06);
+    border-radius: 15px;
+    /* ❗ overflow: hidden НЕТ — иначе обрежет тень и transform */
+
+    cursor: pointer;
     transition:
         border-color 0.2s ease,
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-.cardLink:hover .cardImage {
-    border-color: rgb(249 209 59); /* 👈 жёлтая подсветка */
-    transform: translateY(-2px); /* 👈 всплытие */
+/* 👇 hover идентично CatalogList */
+.card:hover {
+    border-color: rgb(249 209 59);
+    transform: translateY(-2px);
     box-shadow: 0 6px 16px rgb(0 0 0 / 0.08);
 }
 
-.title_book {
-    display: block; /* 👈 чтобы ширина была по слайду */
-    width: 100%; /* 👈 не выходить за пределы */
-    max-width: 100%; /* 👈 ограничение */
-    text-align: center; /* 👈 по центру */
-    white-space: nowrap; /* 👈 одна строка */
-    overflow: hidden; /* 👈 обрезать */
-    text-overflow: ellipsis; /* 👈 «…» */
+/* ---------- ФОТО ---------- */
 
-    font-size: 14px;
+.image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px 15px 0 0;   /* верхние углы = 16px − 1px border */
+    overflow: hidden;               /* обрезает картинку по скруглению */
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- ТЕКСТ ---------- */
+
+.title {
+    font-weight: 500;
     line-height: 1.3;
     color: rgb(0 0 0 / 0.85);
-    margin-top: 8px; /* 👈 отступ от картинки */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    padding: 0px 12px 12px;
 }
 
 /* =========================================== */
-/* ---------- СТРЕЛКИ КАРУСЕЛИ ---------- */
+/* ---------- СТРЕЛКИ ---------- */
 /* =========================================== */
 
 .carouselPrev,
 .carouselNext {
-    /* 👇 корпоративный жёлтый */
     color: rgb(0 0 0 / 0.9);
     background-color: rgb(249 209 59);
     border: 1px solid rgb(249 209 59);
@@ -121,17 +152,24 @@
         background-color 0.2s ease,
         color 0.2s ease,
         transform 0.2s ease;
+
+ 
 }
 
 .carouselPrev:hover,
 .carouselNext:hover {
     background-color: rgb(230 190 40);
     color: rgb(0 0 0 / 0.95);
+
+   
+     border-color: #f7f3e7;       /* 👈 рамка темнеет при hover */
+     cursor: pointer; 
+
 }
 
 .carouselPrev {
     top: -15px;
-    left: -10px; /* 👈 ближе к контенту */
+    left: -10px;
 }
 
 .carouselNext {
@@ -148,14 +186,18 @@
         font-size: 16px;
     }
 
-    .title_book {
+    .title{
         display: none;
+    }
+
+    .image{
+        border-radius: 15px; 
     }
 }
 
 @media (max-width: 640px) {
-    .carouselPrev,
+    /* .carouselPrev,
     .carouselNext {
         display: none;
-    }
+    } */
 }
