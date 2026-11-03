@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -12,46 +7,45 @@ datasource db {
   provider = "postgresql"
 }
 
-model User {
-  id           String  @id @default(cuid())
-  email        String  @unique
-  passwordHash String
-  name         String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Section {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
 }
 
-model Author {
-  id            String       @id @default(cuid())
-  slug          String       @unique
-  name          String // короткое имя: "Гомер"
-  fullName      String? // полное имя
-  culture       AuthorOrigin // GREEK | ROMAN
-  birthDate     String? // отрицательное значение = до н.э.
-  photoUrl      String?
-  biographyHtml String?      @db.Text
 
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
+model Period {
+  id    String @id @default(cuid())
+  name  String @unique   // "VIII в. до н.э.", "I в. н.э."
+  slug  String @unique   // "viii-bc", "i-ad"
+  order Int    @unique   // Порядковый номер для хронологической сортировки
 
-  books Book[]
-
-  @@index([name])
+  // books Book[]   ← раскомментируем, когда создадим модель Book
 }
 
-model Book {
-  id            String         @id @default(cuid())
-  slug          String         @unique
-  title         String
-  imageUrl      String?
 
-  authorId      String
-  author        Author         @relation(fields: [authorId], references: [id], onDelete: Restrict)
+model Genre {
+  id    String @id @default(cuid())
+  name  String @unique   // "Роман" 
+  slug  String @unique   // "roman" 
+
+  // Зеркальное поле связи: массив книг. В базе данных колонки НЕТ.
+  // Раскомментируем, когда создадим модель Book с неявной m-n.
+  // books Book[]
 }
 
-enum AuthorOrigin {
-  GREEK
-  ROMAN
+
+
+model Translator {
+  id        String @id @default(cuid())
+  name      String?          
+  fullName  String           
+  dateLife  String?         
+  shortText String? @db.Text    
+  biographyHtml String? @db.Text  
+  slug      String @unique  // "gomerovskiy-perevodchik", "ginzburg"
+
+  // Зеркальное поле связи: все книги этого переводчика.
+  // В базе данных колонки нет — нужно только для запросов.
+  // books Book[]
 }

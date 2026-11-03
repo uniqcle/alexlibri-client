@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import horace from "@assets/images/authors/horace.png";
+import horace from "@assets/images/translators/blumenau.jpg";
 import { Separator } from "@components/ui/separator";
 import styles from "./TranslatorsList.module.css";
 
 const translators = Array.from({ length: 22 }).map((_, i) => ({
     id: i + 1,
-    name: "Гораций",
-    birthdate: "65 - 8 года до н. э.",
+    name: "Соловьев С.М.",
+    birthdate: "1885–1942",
 }));
 
 export function TranslatorsList() {

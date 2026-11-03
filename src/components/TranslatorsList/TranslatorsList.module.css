@@ -79,7 +79,7 @@
 
 .image {
     
-    width: 70%;
+    width: 90%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
@@ -93,7 +93,8 @@
 }
 
 .card:hover .image {
-    border-color: rgb(249 209 59);
+    border-color: white;
+     
     box-shadow: 0 4px 14px rgb(0 0 0 / 0.15);
 }
 

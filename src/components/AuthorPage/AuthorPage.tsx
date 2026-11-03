@@ -1,5 +1,7 @@
 import Image from "next/image";
-import horace from "@assets/images/authors/horace.png";
+// import horace from "@assets/images/authors/horace.png";
+import horace from "@assets/images/translators/blumenau.jpg";
+
 import { Separator } from "@components/ui/separator";
 import {
     Card,
@@ -35,7 +37,9 @@ export async function AuthorPage({
                     />
                 </div>
                 <div className={styles.author_desc}>
-                    <div className={styles.author_fullName}>Гораций Флакк</div>
+                    <div className={styles.author_fullName}>
+                        Афанасий Афанасьевич Фет
+                    </div>
                     <div className={styles.author_birthDate}>12.23.2203</div>
                     <div className={styles.author_desc_text}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.

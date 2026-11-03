@@ -19,8 +19,8 @@
 }
 
 .author_image {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     flex-shrink: 0;
 
     border-radius: 50%;
@@ -42,7 +42,8 @@
 }
 
 .author_image:hover {
-    border-color: rgb(249 209 59);
+    border-color: white;
+    border-width: 3px; 
     box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
 }
 

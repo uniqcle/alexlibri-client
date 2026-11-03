@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE "Genre" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
+
+    CONSTRAINT "Genre_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Genre_name_key" ON "Genre"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Genre_slug_key" ON "Genre"("slug");
