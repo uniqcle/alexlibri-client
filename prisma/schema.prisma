@@ -44,6 +44,7 @@ model Translator {
   shortText String? @db.Text    
   biographyHtml String? @db.Text  
   slug      String @unique  // "gomerovskiy-perevodchik", "ginzburg"
+  photo String?
 
   // Зеркальное поле связи: все книги этого переводчика.
   // В базе данных колонки нет — нужно только для запросов.

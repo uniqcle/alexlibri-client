@@ -2,6 +2,16 @@
 import { PrismaClient } from "../../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
+// prisma/seeds/translators.ts
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const BIO_DIR = join(__dirname, "bio_translators");
+
+function loadBiography(slug: string): string {
+    return readFileSync(join(BIO_DIR, `${slug}.html.txt`), "utf-8");
+}
+ 
 
 const adapter = new PrismaPg({
     connectionString: process.env.DATABASE_URL,
@@ -12,32 +22,14 @@ const prisma = new PrismaClient({ adapter });
 // Примеры переводчиков (замените на реальные данные)
 const translators = [
     {
-        name: "Гнедич",
-        fullName: "Николай Иванович Гнедич",
-        dateLife: "1784–1833",
+        name: "Иванов",
+        fullName: "Вячеслав Иванович Иванов",
+        dateLife: "1866–1949",
         shortText:
-            "Русский поэт и переводчик, автор классического перевода «Илиады».",
-        biographyHtml:
-            "<p>Николай Иванович Гнедич (1784–1833) — русский поэт, переводчик. Наиболее известен переводом «Илиады» Гомера, над которым работал более 20 лет.</p>",
-        slug: "gnezdich",
-    },
-    {
-        name: "Жуковский",
-        fullName: "Василий Андреевич Жуковский",
-        dateLife: "1783–1852",
-        shortText: "Русский поэт и переводчик, автор перевода «Одиссеи».",
-        biographyHtml:
-            "<p>Василий Андреевич Жуковский (1783–1852) — русский поэт, один из основоположников романтизма в русской поэзии. Перевёл «Одиссею» Гомера.</p>",
-        slug: "zhukovskiy",
-    },
-    {
-        name: "Гинзбург",
-        fullName: "Лидия Яковлевна Гинзбург",
-        dateLife: "1902–1990",
-        shortText: "Русский литературовед и переводчик.",
-        biographyHtml:
-            "<p>Лидия Яковлевна Гинзбург (1902–1990) — русский литературовед, писательница, переводчик.</p>",
-        slug: "ginzburg",
+            "Русский поэт-символист, философ и филолог-классик. Переводил древнегреческую трагедию (Эсхил, Софокл, Еврипид), комедии Аристофана, лирику Сапфо и Алкея. Один из крупнейших переводчиков и знатоков античности в русской культуре.",
+        biographyHtml: loadBiography("ivanov"),
+        slug: "ivanov",
+        photo: "ivanov",
     },
 ];
 
