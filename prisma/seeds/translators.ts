@@ -12,6 +12,7 @@ function loadBiography(slug: string): string {
     return readFileSync(join(BIO_DIR, `${slug}.html.txt`), "utf-8");
 }
  
+ 
 
 const adapter = new PrismaPg({
     connectionString: process.env.DATABASE_URL,

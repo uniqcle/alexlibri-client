@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import horace from "@assets/images/authors/horace.png";
-import horace from "@assets/images/translators/blumenau.jpg";
+import horace from "@assets/images/authors/gomer.png";
 
 import { Separator } from "@components/ui/separator";
 import {
@@ -37,15 +37,13 @@ export async function AuthorPage({
                     />
                 </div>
                 <div className={styles.author_desc}>
-                    <div className={styles.author_fullName}>
-                        Афанасий Афанасьевич Фет
-                    </div>
+                    <div className={styles.author_fullName}>Гомер</div>
                     <div className={styles.author_birthDate}>12.23.2203</div>
                     <div className={styles.author_desc_text}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quos tenetur voluptate ex voluptatem, atque, blanditiis,
-                        possimus neque alias quas doloribus magnam ipsa cumque
-                        fugit error molestias dolores incidunt at quibusdam.
+                        Древнегреческий поэт, легендарный автор эпических поэм
+                        «Илиада» и «Одиссея». Его произведения стали фундаментом
+                        всей европейской литературной традиции и по сей день
+                        остаются величайшими памятниками античной словесности.
                     </div>
                 </div>
             </div>
@@ -80,12 +78,7 @@ export async function AuthorPage({
                                     <CardContent
                                         className={styles.author_cardContent}
                                     >
-                                        Lorem ipsum dolor, sit amet consectetur
-                                        adipisicing elit. Praesentium velit
-                                        impedit ut a culpa eum delectus porro
-                                        libero. Natus molestias minima,
-                                        consequuntur numquam eum dolor quia
-                                        recusandae enim ducimus autem.
+                                        text...
                                     </CardContent>
                                 </Card>
                             ),

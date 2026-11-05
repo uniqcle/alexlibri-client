@@ -35,6 +35,34 @@ model Genre {
 }
 
 
+model Culture {
+  id    String @id @default(cuid())
+  name  String @unique   // "Греческая", "Римская"
+  slug  String @unique   // "greek", "roman"
+
+  authors Author[]
+}
+
+
+
+model Author {
+  id            String  @id @default(cuid())
+  name          String?           // короткое имя ("Гомер")
+  fullName      String            // полное имя ("Гомер")
+  dateLife      String?           // "VIII в. до н.э."
+  shortText     String? @db.Text  // краткое описание
+  biographyHtml String? @db.Text  // биография в HTML
+  photo         String?           // имя файла фото
+  slug          String  @unique   // "gomer"
+  commentTimey  String? @db.Text  // текстовый комментарий персонажа Тимей
+
+
+  culture   Culture? @relation(fields: [cultureId], references: [id], onDelete: Restrict)
+  cultureId String?
+
+  // books Book[]   ← раскомментируем, когда создадим Book
+}
+
 
 model Translator {
   id        String @id @default(cuid())

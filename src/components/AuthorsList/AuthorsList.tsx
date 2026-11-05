@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-import horace from "@assets/images/authors/horace.png";
+import horace from "@assets/images/authors/gomer.png";
+
+
 import { Separator } from "@components/ui/separator";
 import { ToggleGroup, ToggleGroupItem } from "@components/ui/toggle-group";
 import styles from "./AuthorsList.module.css";

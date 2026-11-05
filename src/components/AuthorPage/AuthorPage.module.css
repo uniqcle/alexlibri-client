@@ -42,7 +42,7 @@
 }
 
 .author_image:hover {
-    border-color: white;
+    border-color: #f9d13b;
     border-width: 3px; 
     box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
 }
